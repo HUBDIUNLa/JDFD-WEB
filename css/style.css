@@ -1561,6 +1561,7 @@ h6 {
     z-index: 2;
 }
 
+
 .btn-ingresar-jornada {
     position: absolute !important;
     bottom: 40px !important;
@@ -1591,10 +1592,10 @@ h6 {
 
 @media (max-width: 767px) {
     .btn-ingresar-jornada {
-        bottom: 25px !important;
+        bottom: 12% !important;
         right: 25px !important;
-        padding: 12px 25px !important;
-        font-size: 13px !important;
+        padding: 14px 28px !important;
+        font-size: 14px !important;
     }
 }
 
