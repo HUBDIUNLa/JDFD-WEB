@@ -118,19 +118,19 @@ h6 {
 }
 
 .ecosystem2-section {
-  background: var(--tomato-dark, #FF6542);
+  background: var(--hub-white, #ffffff);
   color: var(--hub-black);
 }
 
 .ecosystem2-card {
-  background: var(--tomato-clear, #f9751d);
+  background: var(--hub-black, #000000);
   color: var(--hub-white);
   transition: transform 0.2s ease, background-color 0.2s ease;
 }
 
 .ecosystem2-card:hover {
   transform: scale(1.03);
-  background: var(--tomato-clear, #e54906);
+  background: var(--hub-dark-dark-cyan, #1A8C92);
 }
 
 .ecosystem2-card-link {
@@ -149,7 +149,7 @@ h6 {
 }
 
 .ecosystem2-card-link:hover {
-  background: var(--tomato-clear, #e54906);
+  background: var(--hub-dark-dark-cyan, #1A8C92);
   color: var(--hub-black);
 }
 
