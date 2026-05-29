@@ -87,7 +87,7 @@ h6 {
 }
 
 .ecosystem-card {
-  background: var(--grape-soda, #88498f);
+  background: var(--mauve-shadow, #564154);
   color: var(--hub-white);
   transition: transform 0.2s ease, background-color 0.2s ease;
 }
@@ -1692,11 +1692,7 @@ h6 {
     }
 }
 
-### 2. Los Estilos para tu `css/style.css`
 
-Para que los botoncitos individuales de "Ver Trayectoria" tengan una estética premium, agregá estas líneas al final de tu archivo CSS. Esto les quita el diseño aburrido por defecto de las listas, les pone el verde institucional traslúcido y hace que la pequeña flecha rote suavemente de dirección al abrirse:
-
-```css
 /* --- BOTÓN Y CONTROL DE BIO INDIVIDUAL OCULTA --- */
 .bio-individual summary::-webkit-details-marker {
     display: none !important; /* Oculta la flecha fea nativa en Chrome/Safari */
