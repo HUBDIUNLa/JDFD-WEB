@@ -278,7 +278,7 @@ h6 {
 }
 
 .legal-divider {
-  border-top: 4px solid var(--tomato, #FF6542);
+  border-top: 4px solid var(--hub-dark-dark-cyan, #1A8C92);
   margin-top: 2rem;
   margin-bottom: 2rem;
 }
