@@ -1691,3 +1691,66 @@ h6 {
         display: none !important;
     }
 }
+
+### 2. Los Estilos para tu `css/style.css`
+
+Para que los botoncitos individuales de "Ver Trayectoria" tengan una estética premium, agregá estas líneas al final de tu archivo CSS. Esto les quita el diseño aburrido por defecto de las listas, les pone el verde institucional traslúcido y hace que la pequeña flecha rote suavemente de dirección al abrirse:
+
+```css
+/* --- BOTÓN Y CONTROL DE BIO INDIVIDUAL OCULTA --- */
+.bio-individual summary::-webkit-details-marker {
+    display: none !important; /* Oculta la flecha fea nativa en Chrome/Safari */
+}
+
+.bio-individual {
+    list-style: none !important;
+}
+
+.btn-ver-bio {
+    list-style: none !important;
+    outline: none !important;
+    cursor: pointer !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    gap: 8px !important;
+    width: 100% !important;
+    background-color: rgba(26, 140, 146, 0.2) !important; /* Tu tono teal con transparencia */
+    border: 1px solid rgba(255, 255, 255, 0.15) !important;
+    color: #ffffff !important;
+    padding: 8px 12px !important;
+    font-family: var(--hub-font-main), sans-serif;
+    font-size: 0.75rem !important;
+    font-weight: 600 !important;
+    text-transform: uppercase !important;
+    letter-spacing: 0.5px !important;
+    transition: all 0.2s ease !important;
+}
+
+.btn-ver-bio:hover {
+    background-color: #1A8C92 !important; /* Sólido al pasar el mouse */
+    border-color: #ffffff !important;
+}
+
+/* Rotación de la micro flecha de la Bio */
+.bio-individual[open] .flecha-bio {
+    transform: rotate(180deg) !important;
+}
+
+.flecha-bio {
+    transition: transform 0.2s ease !important;
+}
+
+/* Asegurar que las bios se expandan completas en la impresión sin romperse */
+@media print {
+    .bio-individual {
+        display: block !important;
+    }
+    .bio-individual p {
+        display: block !important;
+        color: #111111 !important;
+    }
+    .btn-ver-bio {
+        display: none !important; /* Oculta el botón interactivo en el papel */
+    }
+}
