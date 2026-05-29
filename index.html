@@ -667,16 +667,20 @@
                 <iframe src="https://www.google.com/maps?q=Av.%20Hip%C3%B3lito%20Yrigoyen%205682%20Lan%C3%BAs&output=embed" class="w-full h-full object-cover" style="border:0; min-height: 250px;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
               </div>
 
-              <div class="relative w-full h-full overflow-hidden border border-cyan-800 group">
-                <img src="assets/images/Mapa-Predio-yrigoyen-ByW-1536x1276.jpg" alt="Mapa Predio" class="w-full h-full object-cover object-center">
-                
-                <div class="absolute inset-0 bg-black/60 flex flex-col items-center justify-center p-4 text-center transition-all duration-300 group-hover:bg-black/40">
-                  <p class="text-sm font-semibold text-white mb-3 tracking-wide uppercase">Esquema Interno del Campus</p>
-                  <button onclick="abrirModalMapa()" class="bg-[#1A8C92] hover:bg-[#11D6C5] text-white font-bold px-5 py-2.5 text-xs uppercase tracking-wider transition-all duration-200 shadow-md">
-                    <i class="fa-solid fa-magnifying-glass-plus mr-2"></i> Ampliar Mapa del Predio
-                  </button>
-                </div>
-              </div>
+              <div class="relative w-full h-full overflow-hidden border border-cyan-800 group min-h-[250px]">
+  <img src="assets/images/Mapa-Predio-yrigoyen-ByW-1536x1276.jpg" alt="Mapa Predio" class="w-full h-full object-cover object-center">
+  
+  <div class="absolute inset-0 bg-black/65 transition-all duration-300 group-hover:bg-black/40 pointer-events-none"></div>
+
+  <div class="absolute inset-0 flex flex-col items-center justify-center p-4 text-center">
+    <p class="text-sm font-semibold text-white mb-3 tracking-wide uppercase pointer-events-none">Esquema Predio Yrigoyen</p>
+    
+    <button type="button" onclick="event.preventDefault(); event.stopPropagation(); abrirModalMapa();" class="relative z-10 bg-[#1A8C92] hover:bg-[#11D6C5] text-white hover:text-black font-bold px-5 py-2.5 text-xs uppercase tracking-wider transition-all duration-200 shadow-md cursor-pointer">
+      <i class="fa-solid fa-magnifying-glass-plus mr-2"></i> Ampliar Mapa del Predio
+    </button>
+  </div>
+</div>
+
             </div>
 
           </div>
