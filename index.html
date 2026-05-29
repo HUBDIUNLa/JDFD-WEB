@@ -866,5 +866,34 @@ function rechazarCookies() {
 
 </script>
 
+<script>
+
+// Funciones Globales para el Pop-up del mapa
+function abrirModalMapa() {
+  const modal = document.getElementById('modal-mapa-predio');
+  if (modal) {
+    modal.style.setProperty('display', 'flex', 'important');
+    document.body.style.overflow = 'hidden'; // Bloquea el scroll de la web de fondo
+  }
+}
+
+function cerrarModalMapa() {
+  const modal = document.getElementById('modal-mapa-predio');
+  if (modal) {
+    modal.style.setProperty('display', 'none', 'important');
+    document.body.style.overflow = ''; // Devuelve el scroll normal
+  }
+}
+
+// Cierra el pop-up si hacen clic en el fondo negro
+function cerrarModalMapaOutside(event) {
+  // Solo cierra si hace clic en el fondo del modal, no en la tarjeta blanca
+  if (event.target.id === 'modal-mapa-predio') {
+    cerrarModalMapa();
+  }
+}
+
+</script>
+
 </body>
 </html>
