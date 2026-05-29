@@ -1650,3 +1650,44 @@ h6 {
         font-size: 14px !important;
     }
 }
+
+/* --- BOTÓN DE WHATSAPP INSTITUCIONAL EN EL FOOTER --- */
+.footer-whatsapp-container {
+    display: flex;
+    justify-content: center; /* Centra el botón en el footer de forma limpia */
+    margin-top: 20px;
+    margin-bottom: 20px;
+    width: 100%;
+}
+
+.btn-footer-whatsapp {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #25D366; /* Verde oficial WhatsApp */
+    color: #ffffff !important;
+    font-family: 'Karla', sans-serif;
+    font-weight: 600;
+    font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    padding: 12px 28px;
+    border: none;
+    text-decoration: none !important;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(37, 211, 102, 0.3);
+}
+
+.btn-footer-whatsapp:hover {
+    background-color: #128C7E; /* Tono de WhatsApp más oscuro al pasar el mouse */
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(18, 140, 126, 0.4);
+    color: #ffffff !important;
+}
+
+/* Evitamos que el botón se imprima o rompa el diseño del PDF final */
+@media print {
+    .footer-whatsapp-container {
+        display: none !important;
+    }
+}
