@@ -82,19 +82,19 @@ h6 {
 }
 
 .ecosystem-section {
-  background: var(--mauve-shadow, #564154);
+  background: var(--hub-black, #000000);
   color: var(--hub-black);
 }
 
 .ecosystem-card {
-  background: var(--mauve-shadow, #564154);
+  background: var(--hub-black, #000000);
   color: var(--hub-white);
   transition: transform 0.2s ease, background-color 0.2s ease;
 }
 
 .ecosystem-card:hover {
   transform: scale(1.03);
-  background: var(--grape-soda, #88498f);
+  background: var(--hub-dark-dark-cyan, #1A8C92);
 }
 
 .ecosystem-card-link {
