@@ -52,15 +52,29 @@
         object-fit: contain;
         display: block;
     }
+.logo-destacado {
+    width: 440px;
+    height: 180px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
 
+.logo-destacado img {
+    width: 100%;
+    height: auto;
+    max-height: 100%;
+    object-fit: contain;
+    display: block;
+}
+
+@media (max-width: 768px) {
     .logo-destacado {
-        width: 220px;
-        height: 90px;
-        margin: 0 auto;
-        display: flex;
-        align-items: center;
-        justify-content: center;
+        width: min(90vw, 420px);
+        height: 160px;
     }
+}
 
     .logo-destacado a {
         width: 100%;
@@ -70,13 +84,7 @@
         justify-content: center;
     }
 
-    .logo-destacado img {
-        max-width: 100%;
-        max-height: 100%;
-        object-fit: contain;
-        display: block;
-    }
-
+   
     @media (max-width: 768px) {
         .jornada-organizadores {
             padding: 40px 15px;
