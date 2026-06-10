@@ -1,4 +1,3 @@
-
 <style>
     :root {
         --bg-white: #ffffff;
@@ -21,13 +20,35 @@
         color: #333;
     }
 
-    .fila-logos {
+    .organizadores-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 42px;
+        align-items: start;
+    }
+
+    .organizadores-columna {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .organizadores-subtitulo {
+        font-size: 1rem;
+        font-weight: 700;
+        letter-spacing: 1.5px;
+        text-transform: uppercase;
+        color: #333;
+        margin: 0 0 28px;
+    }
+
+    .logos-grupo {
         display: flex;
         justify-content: center;
         align-items: center;
-        gap: 38px;
+        gap: 28px;
         flex-wrap: wrap;
-        margin-bottom: 35px;
+        width: 100%;
     }
 
     .logo-item {
@@ -52,39 +73,29 @@
         object-fit: contain;
         display: block;
     }
-.logo-destacado {
-    width: 440px;
-    height: 180px;
-    margin: 0 auto;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
 
-.logo-destacado img {
-    width: 100%;
-    height: auto;
-    max-height: 100%;
-    object-fit: contain;
-    display: block;
-}
-
-@media (max-width: 768px) {
-    .logo-destacado {
-        width: min(90vw, 420px);
-        height: 160px;
+    .logo-item.logo-horizontal {
+        width: 260px;
+        height: 95px;
     }
-}
 
-    .logo-destacado a {
+    .logo-item.logo-horizontal img {
         width: 100%;
-        height: 100%;
-        display: flex;
-        align-items: center;
-        justify-content: center;
+        height: auto;
+        max-height: 100%;
     }
 
-   
+    @media (max-width: 900px) {
+        .organizadores-grid {
+            grid-template-columns: 1fr;
+            gap: 44px;
+        }
+
+        .organizadores-subtitulo {
+            margin-bottom: 22px;
+        }
+    }
+
     @media (max-width: 768px) {
         .jornada-organizadores {
             padding: 40px 15px;
@@ -95,9 +106,8 @@
             margin-bottom: 35px;
         }
 
-        .fila-logos {
+        .logos-grupo {
             gap: 24px;
-            margin-bottom: 30px;
         }
 
         .logo-item {
@@ -105,61 +115,79 @@
             height: 58px;
         }
 
-        .logo-destacado {
-            width: 288px;
-            height: 120px;
+        .logo-item.logo-horizontal {
+            width: min(88vw, 288px);
+            height: 100px;
         }
     }
 </style>
 
 <section class="jornada-organizadores">
 
-    <h2 class="section-title">Organizan la Jornada</h2>
+    <h2 class="section-title">Instituciones participantes</h2>
 
-    <div class="fila-logos">
+    <div class="organizadores-grid">
 
-        <div class="logo-item">
-            <a href="https://www.unla.edu.ar" target="_blank" rel="noopener noreferrer" aria-label="Sitio web de UNLa">
-                <img src="assets/images/unla logo rrss.jpg" alt="UNLa">
-            </a>
+        <div class="organizadores-columna">
+            <h3 class="organizadores-subtitulo">Organizan</h3>
+
+            <div class="logos-grupo">
+                <div class="logo-item">
+                    <a href="https://lad.unla.edu.ar" target="_blank" rel="noopener noreferrer" aria-label="Sitio web del LAD">
+                        <img src="assets/images/lad sin borde negro.png" alt="LAD">
+                    </a>
+                </div>
+
+                <div class="logo-item">
+                    <a href="https://www.unla.edu.ar/carreras/posgrado/especializaciones/tecnologias-de-fabricacion-digital" target="_blank" rel="noopener noreferrer" aria-label="Sitio web de ETFD">
+                        <img src="assets/images/etfdunla_logo.jpg" alt="ETFD UNLa">
+                    </a>
+                </div>
+            </div>
         </div>
 
-        <div class="logo-item">
-            <a href="https://lad.unla.edu.ar" target="_blank" rel="noopener noreferrer" aria-label="Sitio web del LAD">
-                <img src="assets/images/lad sin borde negro.png" alt="LAD">
-            </a>
+        <div class="organizadores-columna">
+            <h3 class="organizadores-subtitulo">Convocan</h3>
+
+            <div class="logos-grupo">
+                <div class="logo-item">
+                    <a href="https://www.unla.edu.ar/carreras/grado/licenciaturas/diseno-industrial" target="_blank" rel="noopener noreferrer" aria-label="Sitio web de DI">
+                        <img src="assets/images/logo di.jpg" alt="DI UNLa">
+                    </a>
+                </div>
+
+                <div class="logo-item">
+                    <a href="https://www.unla.edu.ar/rectorado/escuela-de-oficios-felipe-vallese" target="_blank" rel="noopener noreferrer" aria-label="Sitio web de Escuela de Oficios Felipe Vallese">
+                        <img src="assets/images/escueladeoficioscuadrado.png" alt="Escuela de Oficios Felipe Vallese">
+                    </a>
+                </div>
+            </div>
         </div>
 
-        <div class="logo-item">
-            <a href="https://www.unla.edu.ar/carreras/posgrado/especializaciones/tecnologias-de-fabricacion-digital" target="_blank" rel="noopener noreferrer" aria-label="Sitio web de ETFD">
-                <img src="assets/images/etfdunla_logo.jpg" alt="ETFD UNLa">
-            </a>
+        <div class="organizadores-columna">
+            <h3 class="organizadores-subtitulo">Auspician</h3>
+
+            <div class="logos-grupo">
+                <div class="logo-item logo-horizontal">
+                    <a href="https://mapadelestado.gba.gob.ar/organismos/1464" target="_blank" rel="noopener noreferrer" aria-label="Sitio web de la Dirección General de Cultura y Educación de la Provincia de Buenos Aires">
+                        <img src="assets/images/DGCyE_PBA_Horizontal.png" alt="Dirección General de Cultura y Educación de la Provincia de Buenos Aires">
+                    </a>
+                </div>
+
+                <div class="logo-item">
+                    <a href="https://www.unla.edu.ar/departamentos/humanidades-y-artes/" target="_blank" rel="noopener noreferrer" aria-label="Sitio web de HyA">
+                        <img src="assets/images/logo HyA.jpg" alt="HyA UNLa">
+                    </a>
+                </div>
+
+                <div class="logo-item">
+                    <a href="https://www.unla.edu.ar" target="_blank" rel="noopener noreferrer" aria-label="Sitio web de UNLa">
+                        <img src="assets/images/unla logo rrss.jpg" alt="UNLa">
+                    </a>
+                </div>
+            </div>
         </div>
 
-        <div class="logo-item">
-            <a href="https://www.unla.edu.ar/carreras/grado/licenciaturas/diseno-industrial" target="_blank" rel="noopener noreferrer" aria-label="Sitio web de DI">
-                <img src="assets/images/logo di.jpg" alt="DI UNLa">
-            </a>
-        </div>
-
-        <div class="logo-item">
-            <a href="https://www.unla.edu.ar/departamentos/humanidades-y-artes/" target="_blank" rel="noopener noreferrer" aria-label="Sitio web de HyA">
-                <img src="assets/images/logo HyA.jpg" alt="HyA UNLa">
-            </a>
-        </div>
-
-        <div class="logo-item">
-            <a href="https://www.unla.edu.ar/rectorado/escuela-de-oficios-felipe-vallese" target="_blank" rel="noopener noreferrer" aria-label="Sitio web de Escuela de Oficios Felipe Vallese">
-                <img src="assets/images/escueladeoficioscuadrado.png" alt="Escuela de Oficios Felipe Vallese">
-            </a>
-        </div>
-
-    </div>
-
-    <div class="logo-destacado">
-        <a href="https://mapadelestado.gba.gob.ar/organismos/1464" target="_blank" rel="noopener noreferrer" aria-label="Sitio web de la Dirección General de Cultura y Educación de la Provincia de Buenos Aires">
-            <img src="assets/images/DGCyE_PBA_Horizontal.png" alt="Dirección General de Cultura y Educación de la Provincia de Buenos Aires">
-        </a>
     </div>
 
 </section>
