@@ -1,0 +1,138 @@
+<div class="w-full md:w-1/2 flex justify-center items-center">
+  <div id="carousel-jdfd" class="relative w-full max-w-[430px] overflow-hidden shadow-xl bg-[#1A8C92]">
+
+    <!-- Slides -->
+    <div class="relative w-full aspect-[9/16] max-h-[620px]">
+
+      <div class="carousel-slide absolute inset-0 opacity-100 transition-opacity duration-700">
+        <img src="assets/images/slide-1.jpg" alt="JDFD slide 1" class="w-full h-full object-contain bg-[#1A8C92]">
+      </div>
+
+      <div class="carousel-slide absolute inset-0 opacity-0 transition-opacity duration-700">
+        <img src="assets/images/slide-2.jpg" alt="JDFD slide 2" class="w-full h-full object-contain bg-[#1A8C92]">
+      </div>
+
+      <div class="carousel-slide absolute inset-0 opacity-0 transition-opacity duration-700">
+        <img src="assets/images/slide-3.jpg" alt="JDFD slide 3" class="w-full h-full object-contain bg-[#1A8C92]">
+      </div>
+
+      <div class="carousel-slide absolute inset-0 opacity-0 transition-opacity duration-700">
+        <img src="assets/images/slide-4.jpg" alt="JDFD slide 4" class="w-full h-full object-contain bg-[#1A8C92]">
+      </div>
+
+      <div class="carousel-slide absolute inset-0 opacity-0 transition-opacity duration-700">
+        <img src="assets/images/slide-5.jpg" alt="JDFD slide 5" class="w-full h-full object-contain bg-[#1A8C92]">
+      </div>
+
+      <div class="carousel-slide absolute inset-0 opacity-0 transition-opacity duration-700">
+        <img src="assets/images/slide-6.jpg" alt="JDFD slide 6" class="w-full h-full object-contain bg-[#1A8C92]">
+      </div>
+
+      <div class="carousel-slide absolute inset-0 opacity-0 transition-opacity duration-700">
+        <img src="assets/images/slide-7.jpg" alt="JDFD slide 7" class="w-full h-full object-contain bg-[#1A8C92]">
+      </div>
+
+      <div class="carousel-slide absolute inset-0 opacity-0 transition-opacity duration-700">
+        <img src="assets/images/slide-8.jpg" alt="JDFD slide 8" class="w-full h-full object-contain bg-[#1A8C92]">
+      </div>
+
+    </div>
+
+    <!-- Botón anterior -->
+    <button
+      type="button"
+      id="carousel-prev"
+      aria-label="Slide anterior"
+      class="absolute left-3 top-1/2 -translate-y-1/2 w-9 h-9 flex items-center justify-center bg-black/45 text-white text-3xl leading-none hover:bg-black/70 transition"
+    >
+      ‹
+    </button>
+
+    <!-- Botón siguiente -->
+    <button
+      type="button"
+      id="carousel-next"
+      aria-label="Slide siguiente"
+      class="absolute right-3 top-1/2 -translate-y-1/2 w-9 h-9 flex items-center justify-center bg-black/45 text-white text-3xl leading-none hover:bg-black/70 transition"
+    >
+      ›
+    </button>
+
+    <!-- Indicadores -->
+    <div id="carousel-dots" class="absolute bottom-3 left-1/2 -translate-x-1/2 flex gap-2"></div>
+
+  </div>
+</div>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const carousel = document.querySelector("#carousel-jdfd");
+    const slides = carousel.querySelectorAll(".carousel-slide");
+    const prevBtn = carousel.querySelector("#carousel-prev");
+    const nextBtn = carousel.querySelector("#carousel-next");
+    const dotsContainer = carousel.querySelector("#carousel-dots");
+
+    let currentSlide = 0;
+    let autoplay;
+
+    slides.forEach((_, index) => {
+      const dot = document.createElement("button");
+      dot.type = "button";
+      dot.setAttribute("aria-label", `Ir al slide ${index + 1}`);
+      dot.className = "w-2.5 h-2.5 rounded-full bg-white/50 hover:bg-white transition";
+      dot.addEventListener("click", () => {
+        showSlide(index);
+        restartAutoplay();
+      });
+      dotsContainer.appendChild(dot);
+    });
+
+    const dots = dotsContainer.querySelectorAll("button");
+
+    function showSlide(index) {
+      slides[currentSlide].classList.remove("opacity-100");
+      slides[currentSlide].classList.add("opacity-0");
+
+      dots[currentSlide].classList.remove("bg-white");
+      dots[currentSlide].classList.add("bg-white/50");
+
+      currentSlide = (index + slides.length) % slides.length;
+
+      slides[currentSlide].classList.remove("opacity-0");
+      slides[currentSlide].classList.add("opacity-100");
+
+      dots[currentSlide].classList.remove("bg-white/50");
+      dots[currentSlide].classList.add("bg-white");
+    }
+
+    function nextSlide() {
+      showSlide(currentSlide + 1);
+    }
+
+    function prevSlide() {
+      showSlide(currentSlide - 1);
+    }
+
+    function startAutoplay() {
+      autoplay = setInterval(nextSlide, 4000);
+    }
+
+    function restartAutoplay() {
+      clearInterval(autoplay);
+      startAutoplay();
+    }
+
+    prevBtn.addEventListener("click", () => {
+      prevSlide();
+      restartAutoplay();
+    });
+
+    nextBtn.addEventListener("click", () => {
+      nextSlide();
+      restartAutoplay();
+    });
+
+    showSlide(0);
+    startAutoplay();
+  });
+</script>
