@@ -8,7 +8,7 @@ html {
 
 body {
   font-family: var(--hub-font-main);
-  background: var(--white-grey, #EBEBEB);
+  background: var(--hub-white,#ffffff );
   color: var(--hub-onyx);
 }
 
@@ -70,10 +70,12 @@ h6 {
 }
 
 .hero-section {
-  min-height: calc(100vh - 8.75rem);
-  padding-top: 0rem;
-  padding-bottom: 0rem;
+  min-height: auto !important;
+  padding-top: 40px;
+  padding-bottom: 20px;
 }
+
+
 
 .full-bleed {
   width: 100vw;
