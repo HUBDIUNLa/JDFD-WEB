@@ -75,6 +75,7 @@
 
 
   <main id="JDFD" class="page-main">
+
     <section id="inicio" class="hero-section flex items-start justify-center px-6">
   <div class="flex flex-col md:flex-row items-center gap-10 max-w-7xl mx-auto">
 
@@ -113,6 +114,100 @@
   </div>
 </section>
 
+<section class="bg-black full-bleed">
+
+<!-- CUENTA REGRESIVA JDFD 2026 -->
+<section class="bg-black text-white py-12 px-6">
+  <div class="max-w-4xl mx-auto text-center">
+
+    <p class="text--hub-white font-bold uppercase tracking-[0.25em] mb-3">
+      Falta cada vez menos
+    </p>
+
+    <h2 class="text-2xl md:text-4xl font-bold mb-8">
+      JDFD 2026
+    </h2>
+
+    <div
+      id="cuenta-regresiva"
+      class="grid grid-cols-2 md:grid-cols-4 gap-4"
+    >
+      <div class="bg-[#1A8C92] p-5">
+        <span id="dias" class="block text-4xl md:text-6xl font-bold">00</span>
+        <span class="text-sm uppercase tracking-wider">Días</span>
+      </div>
+
+      <div class="bg-[#1A8C92] p-5">
+        <span id="horas" class="block text-4xl md:text-6xl font-bold">00</span>
+        <span class="text-sm uppercase tracking-wider">Horas</span>
+      </div>
+
+      <div class="bg-[#1A8C92] p-5">
+        <span id="minutos" class="block text-4xl md:text-6xl font-bold">00</span>
+        <span class="text-sm uppercase tracking-wider">Minutos</span>
+      </div>
+
+      <div class="bg-[#1A8C92] p-5">
+        <span id="segundos" class="block text-4xl md:text-6xl font-bold">00</span>
+        <span class="text-sm uppercase tracking-wider">Segundos</span>
+      </div>
+    </div>
+
+    <p
+      id="mensaje-jdfd"
+      class="hidden text-2xl md:text-4xl font-bold text-[#11D6C5]"
+    >
+      ¡La JDFD 2026 ya comenzó!
+    </p>
+
+    <p class="mt-7 text-lg font-semibold">
+      Jueves 27 de agosto de 2026 — Polo Tecnológico > UNLa
+    </p>
+
+  </div>
+</section>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    // Fecha del evento: 27 de agosto de 2026, 09:00 h de Argentina
+    const fechaJDFD = new Date("2026-08-27T09:00:00-03:00").getTime();
+
+    const dias = document.getElementById("dias");
+    const horas = document.getElementById("horas");
+    const minutos = document.getElementById("minutos");
+    const segundos = document.getElementById("segundos");
+    const contador = document.getElementById("cuenta-regresiva");
+    const mensaje = document.getElementById("mensaje-jdfd");
+
+    function actualizarCuentaRegresiva() {
+      const distancia = fechaJDFD - Date.now();
+
+      if (distancia <= 0) {
+        clearInterval(intervalo);
+        contador.classList.add("hidden");
+        mensaje.classList.remove("hidden");
+        return;
+      }
+
+      dias.textContent = Math.floor(distancia / 86400000);
+      horas.textContent = String(
+        Math.floor((distancia % 86400000) / 3600000)
+      ).padStart(2, "0");
+
+      minutos.textContent = String(
+        Math.floor((distancia % 3600000) / 60000)
+      ).padStart(2, "0");
+
+      segundos.textContent = String(
+        Math.floor((distancia % 60000) / 1000)
+      ).padStart(2, "0");
+    }
+
+    actualizarCuentaRegresiva();
+    const intervalo = setInterval(actualizarCuentaRegresiva, 1000);
+  });
+</script>
+
 <!-- CARRUSEL -->
 
 <section id="carrusel" class="pt-2 pb-16 px-6 overflow-hidden">
@@ -128,29 +223,31 @@
       </div>
     </div>
 
-    <!-- Botón anterior -->
-    <button
-      id="carouselPrev"
-      type="button"
-      aria-label="Diapositiva anterior"
-      class="absolute top-1/2 -left-5 -translate-y-1/2
-             w-12 h-12 rounded-full bg-white text-black text-3xl
-             shadow-lg hover:scale-110 transition z-10"
-    >
-      &#8249;
-    </button>
+   <!-- Botón anterior -->
+<button
+  id="carouselPrev"
+  type="button"
+  aria-label="Diapositiva anterior"
+  class="absolute top-1/2 -left-16 -translate-y-1/2
+         w-12 h-16 bg-[#1A8C92] text-black text-3xl
+         shadow-lg hover:bg-white/80 hover:scale-110
+         transition z-10"
+>
+  &#8249;
+</button>
 
-    <!-- Botón siguiente -->
-    <button
-      id="carouselNext"
-      type="button"
-      aria-label="Diapositiva siguiente"
-      class="absolute top-1/2 -right-5 -translate-y-1/2
-             w-12 h-12 rounded-full bg-white text-black text-3xl
-             shadow-lg hover:scale-110 transition z-10"
-    >
-      &#8250;
-    </button>
+<!-- Botón siguiente -->
+<button
+  id="carouselNext"
+  type="button"
+  aria-label="Diapositiva siguiente"
+  class="absolute top-1/2 -right-16 -translate-y-1/2
+         w-12 h-16 bg-[#1A8C92] text-black text-3xl
+         shadow-lg hover:bg-white/80 hover:scale-110
+         transition z-10"
+>
+  &#8250;
+</button>
 
     <!-- Indicadores -->
     <div
@@ -264,6 +361,9 @@
     startAutoplay();
   });
 </script>
+
+</section>
+
 
 
 
@@ -448,7 +548,7 @@
   <h2 style="color: var(--hub-dark-dark-cyan); font-size: 2rem; text-align: center; margin-bottom: 20px; font-weight: bold;">Cronograma</h2>
 
   <details style="
-    background-color: #262626; /* Fondo gris oscuro de la barra del botón */
+    background-color: #000000; /* Fondo gris oscuro de la barra del botón */
     border-radius: none;
     overflow: hidden;
     transition: all 0.3s ease;
@@ -476,7 +576,7 @@
       </span>
       
       <span class="flecha-icono" style="
-        color: var(--hub-lad-cyan);
+        color: var(--hub-white);
         font-size: 1.2rem;
         font-weight: bold;
       ">▼</span>
@@ -601,7 +701,7 @@
 
   <div class="cronograma-interactivo" style="max-width: 1200px; margin: 0 auto; width: 100%;">
     <details style="
-      background-color: #262626; 
+      background-color: #000000; 
       border-radius: 0px;
       overflow: hidden;
       transition: all 0.3s ease;
@@ -630,7 +730,7 @@
         ">
           Conocer a los organizadores y al comité de la jornada
         </span>
-        <span class="flecha-icono" style="color: var(--hub-lad-cyan); font-size: 1.2rem; font-weight: bold;">▼</span>
+        <span class="flecha-icono" style="color: var(--hub-white) ; font-size: 1.2rem; font-weight: bold;">▼</span>
       </summary>
 
       <div style="
@@ -911,7 +1011,7 @@
 
   <div class="cronograma-interactivo" style="max-width: 1200px; margin: 0 auto; width: 100%;">
     <details style="
-      background-color: #262626; 
+      background-color: #000000; 
       border-radius: 0px;
       overflow: hidden;
       transition: all 0.3s ease;
@@ -940,7 +1040,7 @@
         ">
           Ver Dirección, Mapas y Accesos
         </span>
-        <span class="flecha-icono" style="color: var(--hub-lad-cyan); font-size: 1.2rem; font-weight: bold;">▼</span>
+        <span class="flecha-icono" style="color:[#1A8C92]; font-size: 1.2rem; font-weight: bold;">▼</span>
       </summary>
 
       <div style="background-color: var(--hub-black); padding: 32px 24px; border-top: 1px solid #333;">
@@ -948,7 +1048,7 @@
           <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 items-stretch">
 
             <div class="space-y-8 h-full">
-              <div class="bg-cyan-900 p-8 border border-cyan-800">
+              <div class="bg-[#1A8C92] p-8 border border-cyan-800">
                 <h3 class="text-2xl font-semibold mb-4 text-white">Dirección</h3>
                 <p class="text-gray-300 leading-relaxed">
                   Polo Tecnológico UNLa <br>
@@ -961,7 +1061,7 @@
                 </p>
               </div>
 
-              <div class="bg-cyan-900 p-8 border border-cyan-800">
+              <div class="bg-[#1A8C92] p-8 border border-cyan-800">
                 <h3 class="text-2xl font-semibold mb-4 text-white">Cómo Llegar</h3>
                 <ul class="space-y-4 text-gray-300">
                   <li>
