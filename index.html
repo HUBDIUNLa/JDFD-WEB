@@ -72,6 +72,17 @@
     </div>
   </div>
 
+  <!-- POPUP -->
+<div id="popupInicio" class="popup-overlay">
+    <div class="popup-content">
+        <button class="popup-close" onclick="cerrarPopup()">✕</button>
+
+        <img src="assets/images/carousel/11.jpeg" alt="Imagen destacada" class="popup-image">
+    </div>
+</div>
+
+
+
 
 
   <main id="JDFD" class="page-main">
@@ -1178,6 +1189,18 @@
   <script src="js/components.js?v=1"></script>
 
   <div id="organizadores"></div>
+
+  <script>
+  
+  function cerrarPopup() {
+    document.getElementById("popupInicio").style.display = "none";
+}
+
+window.onload = function () {
+    document.getElementById("popupInicio").style.display = "flex";
+};
+
+</script>
 
 <script>
     document.addEventListener("DOMContentLoaded", function() {
